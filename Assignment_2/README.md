@@ -1,1 +1,2 @@
-Everything in the repo
+# Assignment 2 
+Directory for assignment 2 files

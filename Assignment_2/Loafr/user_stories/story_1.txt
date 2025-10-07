@@ -1,0 +1,2 @@
+As an analyist, I want to explore the data using searches, sorting, and filters so that I can 
+analyze the data more effectively

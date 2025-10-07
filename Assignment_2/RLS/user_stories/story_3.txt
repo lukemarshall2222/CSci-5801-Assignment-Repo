@@ -1,0 +1,2 @@
+As a launch engineer, I want a system that is easy to use and prevents launch until the user is at 
+the control unit and has completed the required prelaunch steps.

@@ -1,0 +1,33 @@
+Use Case 1: Interactive Data Processing
+
+Actor: System Tester
+Type: Primary
+Description: The system tester opens Loafr and applies filters to view errors from the patient
+some component during a specific time window. The tester notices messages are dealyed from events and 
+uses the search functionality to find all instances where response time exceeds some 
+threshold. The tester exports the filtered dataset for review with the development team.
+
+Actor: System Tester
+Type: Failure
+Description: The system tester ties to load a log file from a component with logging that was not 
+updated to conform to the standardized format. Loafr detects the non-conforming 
+format, rejects it, and displays an error message indicating which formatting requirements are not met.
+
+
+Use Case 2: Query Data
+
+Actor: System Tester
+Type: Primary
+Description: The system tester wants to investigate an issue where some component
+performs its function incorrectly. The tester queries the data using Loafr to find all 
+log entries where the component's logged values for the misbehaving portion are outside the expected 
+range during the past month's testing. Loafr executes the query and presents 
+the results in a tabular view, highlighting potential relationships. The tester saves this 
+query for use in regression testing when exploring possible solutions.
+
+Actor: System Tester
+Type: Failure
+Description: The system tester attempts to run a query on some data set. The query is not allowed 
+by the API for some syntactic reason e.g. misspelling, wrong number of arguments, unrecognized 
+keywords. Loafr rejects the query and reports the specific issue to the user along with possible
+solutions.  
