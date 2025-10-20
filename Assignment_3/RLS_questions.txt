@@ -1,0 +1,7 @@
+- How high do you want the Rocket to go?
+
+- How much distance can you maintain from the Rocket, based on the location of the launch site?
+
+- How far are the control unit and launch pad from the rocket?
+
+- Will we have the circuits needed to charge the control unit and the launch pad?
