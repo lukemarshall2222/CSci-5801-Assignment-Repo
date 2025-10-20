@@ -1,4 +1,4 @@
-The classes represented by LOAFR are a log item, the log output, the attribute values, 
+The classes represented in LOAFR are a log item, the log output, the attribute values, 
 the terminal, and a test case. The log item contains a source where the logs came from, a set of 
 entries from the source, a set of keywords associated with the logs. The logs are accessed through
 a getter. A test case contains inputs and a program to use with those inputs, and is able to run the 

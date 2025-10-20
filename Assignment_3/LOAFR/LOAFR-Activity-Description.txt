@@ -1,0 +1,6 @@
+The activity diagram shows the LOAFR system workflow. The workflow begins with the user being 
+user prompted to add data sources, then adding the data source and configuring batch 
+mode with parallel tests. The system then enters a logging cycle where it listens for data, 
+updates logs when conditions of the buffer are met, and stores the updated 
+logs. At the same time, there's a log view compionent that runs tests, displays results in a user GUI, 
+and provides sorting, searching, and filtering operations for log analysis. 

@@ -1,0 +1,8 @@
+The sequence diagram shows interactions between a user, GUI, logging system, and terminal during 
+testing of some application. The proccess begins with the user creating a test with source, output, 
+and label parameters; which triggers the GUI to display the test and log it to the logging system. The 
+GUI then performs a series of operations including test output, sorting, creating sorted files, 
+executing search queries, displaying search results, filtering items, and showing 
+filter results. At the same time, there is a process originating from the terminal where the user 
+creates another test, confirms it, and runs tests in batches. The terminal logs both the 
+batch tests and files to the system.
