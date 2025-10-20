@@ -1,0 +1,11 @@
+The classes represented by LOAFR are a log item, the log output, the attribute values, 
+the terminal, and a test case. The log item contains a source where the logs came from, a set of 
+entries from the source, a set of keywords associated with the logs. The logs are accessed through
+a getter. A test case contains inputs and a program to use with those inputs, and is able to run the 
+test with the input. The attribute values follow from execution of the test case on some given data, 
+and are collected as log items. The log items are then displayed in the log run output or the terminal,
+depending on if the user is using single or batch processing. The log run output presents
+the sources of the logs, the log file loactions, and the logs themselves to the user. The output is
+presented as the user instructs, using sort, search, and filtering operations. The terminal is used 
+to interact with the system during batch processing, and displays the file loaction and the batches 
+being processd, based on sort, search, filter, aggregating, and getting operations. 
