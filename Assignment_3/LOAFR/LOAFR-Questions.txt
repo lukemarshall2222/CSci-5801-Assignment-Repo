@@ -1,0 +1,8 @@
+- What are the different datatypes that each dataset can contain?
+
+- Are there any specific comparisons you want to make as you sort the data?
+
+- How much data do you anticipate?
+
+- Are there any relations between the different tables/datasets that should be accounted for?
+
