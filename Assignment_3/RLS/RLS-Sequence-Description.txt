@@ -1,0 +1,9 @@
+The sequence diagram shows the sequence of operations involved in the process of launching a rocket
+using the rocket launch system. The user initially uses a test operation on the launch pad, which turns
+on the green light. Then the user sends a control unit enabling operation to the launch pad,
+which turns on the red light. The launch pad then sends an enabling operation to the control unit.
+The user uses their ready button operation, which causes the control uint to send the ready signal to 
+the launch pad, which acknowledges the request with a signal back. The user then uses their launch
+button operation with the control unit, which sends a launch signal to the launch pad. This signal
+causes the launch pad's ignition operation, and acknowledges the launch to the control unit, whcih then
+lights its green light. The ignition operation on the rocket causes it to launch. 

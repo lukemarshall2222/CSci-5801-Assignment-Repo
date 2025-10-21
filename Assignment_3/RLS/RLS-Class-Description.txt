@@ -1,0 +1,6 @@
+The classes represented in the Rocket Launch system are the control pad, the lanch unit, and the 
+rocket. The launch unit includes the launch pad, the igniter, and the battery, 
+communicates with the control pad with enable and launch confirm operations, and causes the rocket to
+launch. The control pad interfaces with the user, and contains the interface and operations to ready 
+and launch the rocket, communicating these operations to the control unit. The rocket is the rocket 
+body and engine, and is ignited by the igniter in the launch pad.

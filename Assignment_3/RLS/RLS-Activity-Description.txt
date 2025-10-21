@@ -1,0 +1,9 @@
+The activity diagram shows the process of a launch using the Rocket Launch System. The process 
+starts with initial rocket preparation, and a TEST activation signal from the user triggers the launch 
+pad test arming sequence. The green light is lit if the battery test passes, with the green pad light 
+coming on if the test passes, or remaining dark and ending the process if not. Continuing on as if the
+test passed, the red light signaling communication with the control unit is enabled is turned on when
+the enable button is pressed, and the control unit is enabled. The ready button signal on the enabled
+control unit then causes its red light to turn on, sending a signal to the launch pad to get ready for 
+a launch signal. Then when the launch signal is sent, the control unit initiates the launch and causes
+the green light on the control unit to turn on. 
