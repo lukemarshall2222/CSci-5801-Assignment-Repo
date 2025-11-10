@@ -1,0 +1,4 @@
+### Alternate Solutions
+- We considered using direct write as the default, but particularly for the interactive version, this severely limits the speed of execution and would make some programs with large numbers of recorded changes nearly unusable. Buffered memory should smooth out the speed penalty, even if it runs the risk of data loss. Testing is not a critical uptime operation, so it's okay if a little data is lost.
+
+- We also considered using uncompressed logs in the interactive system to speed up operation on less capable hardware, but in most cases CPU cycles will still be more plentiful than memory on this lightweight platforms. For this reason, it was decided compression is more optimal in this case. In the batch case, compression makes less sense as likely a batch operation would only be attempted on a platform with plentiful resources.

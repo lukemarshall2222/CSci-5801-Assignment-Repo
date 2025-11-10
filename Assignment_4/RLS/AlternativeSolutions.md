@@ -1,2 +1,0 @@
-- We could use a model-view controller so that many people can use the rocket. However, the only people who will be interacting with the rocket are the rocket engineers, and would add unessacary complexity
-- We also could use a repository for the Control Unit and Launch pad to interact, but the control unit needs to know about the Launch Pad's specific status. Also, if the repository fails, it will affect the entire system.

@@ -1,0 +1,4 @@
+- We could use a model-view controller so that many people can use the rocket. However, the only people who will be interacting with the rocket are the rocket engineers, and would add unessacary complexity
+- We also could use a repository for the Control Unit and Launch pad to interact, but the control unit needs to know about the Launch Pad's specific status. Also, if the repository fails, it will affect the entire system.
+- We could use a wired connection between the control unit and the launch pad, but that would require extra work for the engineers and restrictive due to cost of the wire. 
+- We could have an extra module with all the lights and the control unit and launch pad comminucate with it to show their status, but that does not fully meet the requirements.
