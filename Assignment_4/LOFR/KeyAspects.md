@@ -5,3 +5,5 @@ The architecturally important aspects of the LOAFR system include the following 
   - Logs must be stored in a way that minimizes overhead for large systems while balancing storage space. Large runs could have high access times, making it difficult to view and sort through logs.
 - Log setup
    -  Adding new data sources to log must be simple and easy, users should be able to quickly add a new log type and configure it for their needs. This is a key usability criteria.
+- Log interface
+   - For some part of the subject system, interfacing with the logging mechanism should be simple and constant no matter the internal implementation of the logger itself
