@@ -1,1 +1,7 @@
-
+The architecturally important aspects of the LOAFR system include the following aspects:
+- The process of logging.
+  - The actual process of collecting logs has the highest impact on performance and usability of the software. The process needs to be lightweight to ensure logging adds minimal overhead to the system, but complete in that the logs completely capture variable values.
+- Log accessing
+  - Logs must be stored in a way that minimizes overhead for large systems while balancing storage space. Large runs could have high access times, making it difficult to view and sort through logs.
+- Log setup
+   -  Adding new data sources to log must be simple and easy, users should be able to quickly add a new log type and configure it for their needs. This is a key usability criteria.
