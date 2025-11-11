@@ -1,0 +1,11 @@
+### The architecturally important aspects of the LOAFR system include the following:
+- Log storage
+  - Logs must be stored in a way that minimizes overhead for large systems while balancing storage space. Large runs could have high access times, making it difficult to view and sort through logs.
+- System extension UI
+   -  Adding new data sources to log must be simple and easy, users should be able to quickly add a new log type and configure it for their needs. This is a key usability criteria.
+- Logging interface
+   - For some part of the subject system, interfacing with the logging mechanism should be simple and constant no matter the internal implementation of the logger itself. 
+- Log processing
+  - The actual process of accepting logs has the highest impact on performance and usability of the software. The process needs to be lightweight to ensure logging adds minimal overhead to the system, but complete in that the logs completely capture variable values.
+- Log query UI
+  - the method of user interface should allow batch or singular processing, and be user-friendly and intuitve. 
