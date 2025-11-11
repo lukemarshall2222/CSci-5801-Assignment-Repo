@@ -1,0 +1,4 @@
+- control unit will be in the form of a game controller, chich will serve as a robust housing for the harware components.
+- The launch pad and control unit communication will be fascilitated using simple radio signals.
+- The launch pad and control unit will each physically have their own signal lights.
+- The control unit and launch pad will each have a consistent memory of what has already occured in the sequence until the sequence either finishes or is aborted
