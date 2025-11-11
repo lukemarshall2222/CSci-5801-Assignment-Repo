@@ -35,3 +35,19 @@ Repository for group 11 to host our assignments for CSci 5801 Fall 2025.
 - Assignment_3/RLS/RLS-questions.txt - Questions for RLS
 - Assignment_3/RLS/RLS-Sequence-Description.txt - Description of Sequence Diagram for RLS
 - Assignment_3/RLS/RLS-Sequence.png - Sequence Diagram for RLS
+
+
+## For Assignment 4:
+
+### Submission Files
+
+- Assignment_4/LOAFR/1_important_aspects.md - Architecturally Important Aspects for Loafr
+- Assignment_4/LOAFR/2_proposed_solution.md - Proposed Solution for Loafr
+- Assignment_4/LOAFR/3_alternate_solutions.md - Alternative Solutions for Loafr
+- Assignment_4/LOAFR/4_architectural_pattern.md - Architectural Pattern for Loafr
+- Assignment_4/LOAFR/5_design_record.md - Design Record (ADR) for Loafr
+- Assignment_4/RLS/1_important_aspects.md - Architecturally Important Aspects for RLS
+- Assignment_4/RLS/2_proposed_solution.md - Proposed Solution for RLS
+- Assignment_4/RLS/3_alternate_solutions.md - Alternative Solutions for RLS
+- Assignment_4/RLS/4_architectural_pattern.md - Architectural Pattern for RLS
+- Assignment_4/RLS/5_design_record.md - Design Record (ADR) for RLS
