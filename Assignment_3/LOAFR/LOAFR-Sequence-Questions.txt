@@ -1,0 +1,3 @@
+- What kind of datatypes will the user give the GUI?
+- Does the user have a something to store the logfiles with?
+- Within batch mode, we expect every test in the batch to have the same input and output?
