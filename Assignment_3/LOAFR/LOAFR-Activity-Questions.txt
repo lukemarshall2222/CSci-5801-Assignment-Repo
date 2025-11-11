@@ -1,0 +1,3 @@
+- Would the logging part always listen for data?
+- How does the data update occur in batch mode?
+- Will the data be sortable?
