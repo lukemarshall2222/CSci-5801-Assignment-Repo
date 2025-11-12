@@ -1,0 +1,3 @@
+- Should the green light on the launch pad be dependent on the control pad?
+- Do you have a safe distance to go to once you press the enable button?
+- Are the lights bright enough?

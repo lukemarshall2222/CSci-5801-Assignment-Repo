@@ -1,0 +1,3 @@
+- Do you use the control pad, or the launch pad first?
+- How do we know when communication is ready?
+- Does the launch unit interact with both entities?
