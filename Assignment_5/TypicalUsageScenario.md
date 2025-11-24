@@ -1,1 +1,4 @@
+## Typical Conditions
+The code for the *rls_source.py* artifact encodes the basic logic the user would use in interacting with the RLS system. The typical interaction follows a pipe and filter type architecture with the buttons being pushed sequentially. If the user does not push items sequentially, the program will not advance. The program simulates different working conditions, such as if elements are disabled or broken or communication fails. 
 
+The interface responds with a help message to let the user know what happens when an error occurs or a button is pressed. The user is provided with feedback on what status the lights are in and can see the advancement or failure of the system and gets feedback about operation. The user would push the buttons and set different potential failure modes to see how the behavior changes under different environmental conditions.
