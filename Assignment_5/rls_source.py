@@ -1,14 +1,31 @@
 import argparse
 
 class Artifact:
-    def __init__(self, red=True, green=True):
+    def __init__(self, name, red=False, green=False):
         self.red: bool = red
         self.green: bool = green
+        self.name = name
+
+    def update(self, name, cond = True):
+        if name == 'red':
+            self.red = cond
+        elif name == 'green':
+            self.green = cond
+        print(f'{self.name} has red light {self.red} and green light {self.green}')
+
+class Environment:
+    def __init__(self, communication_enabled, battery_charged, circuit_closed, ready_to_launch, launch):
+        self.communication_enabled = communication_enabled
+        self.battery_charged = battery_charged
+        self.circuit_closed = circuit_closed
+        self.ready_to_launch = ready_to_launch,
+        self.launch = launch
 
 def button_press(button_char, condition, pass_message, fail_message) -> bool:
+    # Buttons can be pressed in any order, but if pressed out of order nothing happens
     user_input: str = " "
     while user_input[0] != button_char:
-        user_input = input(f"Enter '{button_char}' to press the test button: ")
+        user_input = input(f"Enter t for test, e for enable, r for ready, and l for launch to test the button: ")
     
     if condition:
         print(pass_message)
@@ -17,27 +34,34 @@ def button_press(button_char, condition, pass_message, fail_message) -> bool:
         print(fail_message)
         return False
 
-def system(launch_pad: Artifact, control_unit: Artifact):
-    test: bool = button_press('t', launch_pad.green, 'Circuit is functional', 'Error with circuit')
+def system(launch_pad: Artifact, control_unit: Artifact, environment: Environment):
+    # This would be housed in the launch pad which is the "server" role in this situation
+    # Sort of a state machine, houses the pipe/filter operation
+    test: bool = button_press('t', environment[0], 'Circuit is functional', 'Error with circuit')
+    launch_pad.update('red', test)
     if not test:
         return
     
-    enable: bool = button_press('e', launch_pad.red, 'Communication is enabled', 'Error with communication')
+    enable: bool = button_press('e', (environment[1] and environment[2]), 'Communication is enabled', 'Error with communication')
+    launch_pad.update('green', enable)
     if not enable:
         return
     
-    ready: bool = button_press('r', control_unit.red, 'We are ready to launch', 'We are not ready to launch')
+    ready: bool = button_press('r', environment[3], 'We are ready to launch', 'We are not ready to launch')
+    control_unit.update('red', ready)
     if not ready:
         return
     
-    launch: bool = button_press('l', control_unit.green, 'Rocket is launching', 'Rocket is not ready to launch')
+    launch: bool = button_press('l', environment[4], 'Rocket is launching', 'Rocket is not ready to launch')
+    control_unit.update('green', launch)
     if not launch:
         return
 
 def main():
-    launch_pad: Artifact = Artifact(args.communication_enabled, (args.battery_charged and args.circuit_closed))
-    control_unit: Artifact = Artifact(args.ready_to_launch, args.launch)
-    system(launch_pad, control_unit)
+    launch_pad: Artifact = Artifact('launchpad')
+    control_unit: Artifact = Artifact('control unit')
+    environment: Environment = Environment(args.communication_enabled, args.battery_charged, args.circuit_closed, args.ready_to_launch, args.launch)
+    system(launch_pad, control_unit, environment)
       
 if __name__ == "__main__":
     # Uer sets up arguments that they want to set up as false
