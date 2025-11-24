@@ -11,41 +11,41 @@ class TestArtifact:
     def test_battery_false(self):
         """test launch pad light with battery_charged = False makes launch_pad.green == False"""
         # battery_charged = False, circuit_closed = True
-        launch_pad = Artifact(True, (False and True))
+        launch_pad = Artifact('launchpad', True, (False and True))
         assert launch_pad.red == True
         assert launch_pad.green == False
 
     def test_circuit_false(self):
         """test launch pad light with  the circuit_closed = False makes launch_pad.green == False"""
         # battery_charged = True, circuit_closed = False
-        launch_pad = Artifact(True, (True and False))
+        launch_pad = Artifact('launchpad', True, (True and False))
         assert launch_pad.red == True
         assert launch_pad.green == False
 
     def test_circuit_true(self):
         """test launch pad light with  both battery and cuituit True makes launch_pad.green == True"""
-        launch_pad = Artifact(True, (True and True))
+        launch_pad = Artifact('launchpad', True, (True and True))
         assert launch_pad.red == True
         assert launch_pad.green == True
     
     def test_ready_false(self):
         """test control unit lights with ready_to_launch = False makes control_unit.red == False"""
         # ready_to_launch = False, launch = True
-        control_unit = Artifact(False, True)
+        control_unit = Artifact('control unit', False, True)
         assert control_unit.red == False
         assert control_unit.green == True
     
     def test_launch_false(self):
         """test control unit lights with launch = False makes control_unit.green == False"""
         # ready_to_launch = True, launch = False
-        control_unit = Artifact(True, False)
+        control_unit = Artifact('control unit', True, False)
         assert control_unit.red == True
         assert control_unit.green == False
     
     def test_ready_launch_true(self):
         """test control unit lights with both ready_to_launch = True and launch = True"""
         # ready_to_launch = True, launch = True
-        control_unit = Artifact(True, True)
+        control_unit = Artifact('control unit', True, True)
         assert control_unit.red == True
         assert control_unit.green == True
 
@@ -104,8 +104,8 @@ class TestSystem:
         inputs = iter(['t', 'e', 'r', 'l'])
         monkeypatch.setattr('builtins.input', lambda _: next(inputs))
 
-        launch_pad = Artifact(red=True, green=True)
-        control_unit = Artifact(red=True, green=True)
+        launch_pad = Artifact('launchpad', red=True, green=True)
+        control_unit = Artifact('control unit', red=True, green=True)
 
         system(launch_pad, control_unit)
 
@@ -120,8 +120,8 @@ class TestSystem:
         monkeypatch.setattr('builtins.input', lambda _: 't')
 
         # signifies batteries are not charged or the circuit is not closed, causes test to fail
-        launch_pad = Artifact(red=True, green=False)
-        control_unit = Artifact(red=True, green=True)
+        launch_pad = Artifact('launchpad', red=True, green=False)
+        control_unit = Artifact('control unit', red=True, green=True)
 
         system(launch_pad, control_unit)
 
@@ -151,9 +151,9 @@ class TestSystem:
         inputs = iter(['t', 'e', 'r'])
         monkeypatch.setattr('builtins.input', lambda _: next(inputs))
 
-        launch_pad = Artifact(red=True, green=True)
+        launch_pad = Artifact('launchpad', red=True, green=True)
         # signifies the ready communication should fail because it is not enabled at a higher level
-        control_unit = Artifact(red=False, green=True)
+        control_unit = Artifact('control unit', red=False, green=True)
 
         system(launch_pad, control_unit)
 
@@ -168,9 +168,9 @@ class TestSystem:
         inputs = iter(['t', 'e', 'r', 'l'])
         monkeypatch.setattr('builtins.input', lambda _: next(inputs))
 
-        launch_pad = Artifact(red=True, green=True)
+        launch_pad = Artifact('launchpad', red=True, green=True)
         # signifies the launch communication should fail because it is not enabled at a higher level
-        control_unit = Artifact(red=True, green=False)
+        control_unit = Artifact('control unit', red=True, green=False)
 
         system(launch_pad, control_unit)
 
@@ -186,8 +186,8 @@ class TestSystem:
         inputs = iter(['x', 't', 'y', 'e', 'z', 'r', 'a', 'l'])
         monkeypatch.setattr('builtins.input', lambda _: next(inputs))
 
-        launch_pad = Artifact(red=True, green=True)
-        control_unit = Artifact(red=True, green=True)
+        launch_pad = Artifact('launchpad', red=True, green=True)
+        control_unit = Artifact('control unit', red=True, green=True)
 
         system(launch_pad, control_unit)
 
