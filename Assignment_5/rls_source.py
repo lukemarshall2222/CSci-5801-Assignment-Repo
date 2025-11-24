@@ -18,8 +18,20 @@ class Environment:
         self.communication_enabled = communication_enabled
         self.battery_charged = battery_charged
         self.circuit_closed = circuit_closed
-        self.ready_to_launch = ready_to_launch,
+        self.ready_to_launch = ready_to_launch
         self.launch = launch
+    
+    def test_communication(self):
+        return self.communication_enabled
+    
+    def test_circuit(self):
+        return self.battery_charged and self.circuit_closed
+    
+    def test_ready(self):
+        return self.ready_to_launch
+    
+    def launched(self):
+        return(self.launch)
 
 def button_press(button_char, condition, pass_message, fail_message) -> bool:
     # Buttons can be pressed in any order, but if pressed out of order nothing happens
@@ -37,22 +49,22 @@ def button_press(button_char, condition, pass_message, fail_message) -> bool:
 def system(launch_pad: Artifact, control_unit: Artifact, environment: Environment):
     # This would be housed in the launch pad which is the "server" role in this situation
     # Sort of a state machine, houses the pipe/filter operation
-    test: bool = button_press('t', environment.communication_enabled, 'Circuit is functional', 'Error with circuit')
+    test: bool = button_press('t', environment.test_circuit(), 'Circuit is functional', 'Error with circuit')
     launch_pad.update('red', test)
     if not test:
         return
     
-    enable: bool = button_press('e', (environment.battery_charged and environment.circuit_closed), 'Communication is enabled', 'Error with communication')
+    enable: bool = button_press('e', environment.test_communication(), 'Communication is enabled', 'Error with communication')
     launch_pad.update('green', enable)
     if not enable:
         return
     
-    ready: bool = button_press('r', environment.ready_to_launch, 'We are ready to launch', 'We are not ready to launch')
+    ready: bool = button_press('r', environment.test_ready(), 'We are ready to launch', 'We are not ready to launch')
     control_unit.update('red', ready)
     if not ready:
         return
     
-    launch: bool = button_press('l', environment.launch, 'Rocket is launching', 'Rocket is not ready to launch')
+    launch: bool = button_press('l', environment.launched(), 'Rocket is launching', 'Rocket is not ready to launch')
     control_unit.update('green', launch)
     if not launch:
         return
