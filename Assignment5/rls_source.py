@@ -5,10 +5,10 @@ class Artifact:
         self.red = red
         self.green = green
 
-def button_press(button_char, condition, pass_message, fail_message):
+def button_press(button_char, button, condition, pass_message, fail_message):
     user_input = " "
     while user_input[0] != button_char:
-        user_input = input(f"Enter '{button_char}' to press the test button: ")
+        user_input = input(f"Enter '{button_char}' to press the {button} button: ")
     
     if condition:
         print(pass_message)
@@ -21,19 +21,19 @@ def main():
     launch_pad = Artifact(args.communication_enabled, (args.battery_charged and args.circuit_closed))
     control_unit = Artifact(args.ready_to_launch, args.launch)
     
-    test = button_press('t', launch_pad.green, 'Circuit is functional', 'Error with circuit')
+    test = button_press('t', 'test', launch_pad.green, 'Circuit is functional', 'Error with circuit')
     if not test:
         return
     
-    enable = button_press('e', launch_pad.red, 'Communication is enabled', 'Error with communication')
+    enable = button_press('e', 'enable', launch_pad.red, 'Communication is enabled', 'Error with communication')
     if not enable:
         return
     
-    ready = button_press('r', control_unit.red, 'We are ready to launch', 'We are not ready to launch')
+    ready = button_press('r', 'ready', control_unit.red, 'We are ready to launch', 'We are not ready to launch')
     if not ready:
         return
     
-    launch = button_press('l', control_unit.green, 'Rocket is launching', 'Rocket is not ready to launch')
+    launch = button_press('l', 'launch', control_unit.green, 'Rocket is launching', 'Rocket is not ready to launch')
     if not launch:
         return
         
