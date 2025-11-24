@@ -1,0 +1,45 @@
+Tests completed by Luke
+Tests completed at 2025-11-24 17:57:37
+============================= test session starts ==============================
+platform darwin -- Python 3.14.0, pytest-9.0.1, pluggy-1.6.0 -- /Users/luke/repos/CSci-5801-Assignment-Repo/.venv/bin/python3.14
+cachedir: .pytest_cache
+rootdir: /Users/luke/repos/CSci-5801-Assignment-Repo/Assignment_5
+plugins: cov-7.0.0
+collecting ... collected 16 items
+
+tests.py::TestArtifact::test_battery_false PASSED                        [  6%]
+tests.py::TestArtifact::test_circuit_false PASSED                        [ 12%]
+tests.py::TestArtifact::test_circuit_true PASSED                         [ 18%]
+tests.py::TestArtifact::test_ready_false PASSED                          [ 25%]
+tests.py::TestArtifact::test_launch_false PASSED                         [ 31%]
+tests.py::TestArtifact::test_ready_launch_true PASSED                    [ 37%]
+tests.py::TestButtonPress::test_button_simple_true PASSED                [ 43%]
+tests.py::TestButtonPress::test_button_simple_false PASSED               [ 50%]
+tests.py::TestButtonPress::test_button_complex_true PASSED               [ 56%]
+tests.py::TestButtonPress::test_button_complex_false PASSED              [ 62%]
+tests.py::TestSystem::test_system_all_success PASSED                     [ 68%]
+tests.py::TestSystem::test_system_test_fail PASSED                       [ 75%]
+tests.py::TestSystem::test_system_enable_fail PASSED                     [ 81%]
+tests.py::TestSystem::test_system_ready_fail PASSED                      [ 87%]
+tests.py::TestSystem::test_system_fail_launch_fail PASSED                [ 93%]
+tests.py::TestSystem::test_system_random_input_success PASSED            [100%]
+
+================================ tests coverage ================================
+_______________ coverage: platform darwin, python 3.14.0-final-0 _______________
+
+Name            Stmts   Miss  Cover   Missing
+---------------------------------------------
+rls_source.py      40     11    72%   38-40, 44-51
+---------------------------------------------
+TOTAL              40     11    72%
+============================== 16 passed in 0.02s ==============================
+
+Tests necessary to demonstrate that the acceptance criteria in our user stories have been satisfied:
+            Redundancy in the launch controls is demonstrated by the button press behavior being determined by not only the user input 
+            but also the initial configuraed state of the launch pad and control unit. These are demonstraited in the TestButtonPress
+            and TestSystem tests.
+
+            Appropriate sequential progression based on result of previous step is determined in context of the correct behavior at some 
+            point in a sequence. This is demonstraited in the TestSystem tests.
+----------------------------------------
+
