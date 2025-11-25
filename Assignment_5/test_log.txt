@@ -1,5 +1,5 @@
 Tests completed by Luke
-Tests completed at 2025-11-24 17:57:37
+Tests completed at 2025-11-24 18:20:17
 ============================= test session starts ==============================
 platform darwin -- Python 3.14.0, pytest-9.0.1, pluggy-1.6.0 -- /Users/luke/repos/CSci-5801-Assignment-Repo/.venv/bin/python3.14
 cachedir: .pytest_cache
@@ -27,11 +27,11 @@ tests.py::TestSystem::test_system_random_input_success PASSED            [100%]
 ================================ tests coverage ================================
 _______________ coverage: platform darwin, python 3.14.0-final-0 _______________
 
-Name            Stmts   Miss  Cover   Missing
----------------------------------------------
-rls_source.py      40     11    72%   38-40, 44-51
----------------------------------------------
-TOTAL              40     11    72%
+Name            Stmts   Miss Branch BrPart  Cover   Missing
+-----------------------------------------------------------
+rls_source.py      40     11     14      1    78%   38-40, 44-51
+-----------------------------------------------------------
+TOTAL              40     11     14      1    78%
 ============================== 16 passed in 0.02s ==============================
 
 Tests necessary to demonstrate that the acceptance criteria in our user stories have been satisfied:

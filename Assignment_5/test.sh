@@ -7,8 +7,7 @@ read -p "Enter your name: " username
 
 # Run pytest and capture output
 timestamp=$(date "+%Y-%m-%d %H:%M:%S")
-test_output=$(pytest tests.py -v --cov=rls_source --cov-report=term-missing 2>&1)
-
+test_output=$(pytest tests.py -v --cov=rls_source --cov-report=term-missing --cov-branch 2>&1)
 # Write to test_log.txt (append if exists)
 {
     echo "Tests completed by $username"
