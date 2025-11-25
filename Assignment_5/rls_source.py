@@ -6,9 +6,10 @@ class Artifact:
         self.green: bool = green
 
 def button_press(button_char, condition, pass_message, fail_message) -> bool:
+    # User input that tells the user to press a button
     user_input: str = " "
     while user_input[0] != button_char:
-        user_input = input(f"Enter '{button_char}' to press the test button: ")
+        user_input = input(f"Press 't' for test, 'e' for enable, 'r' for ready, and 'l' for launch: ")
     
     if condition:
         print(pass_message)
