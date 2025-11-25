@@ -5,7 +5,7 @@ class Artifact:
         self.red: bool = red
         self.green: bool = green
 
-def button_press(button_char, condition, pass_message, fail_message) -> bool:
+def button_press(button_char: str, condition: bool, pass_message: str, fail_message: str) -> bool:
     # User input that tells the user to press a button
     user_input: str = " "
     while user_input[0] != button_char:
