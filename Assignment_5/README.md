@@ -16,8 +16,6 @@ Change the current directory in your terminal to the one containing the project 
 - `--communication_enabled`: Communication is not enabled?
 - `--ready_to_launch`: The rocket will not be ready to launch
 - `--launch`: The rocket will not launch
-    args = parser.parse_args()
-    main()
 
 ## Running Tests
 
