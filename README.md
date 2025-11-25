@@ -51,3 +51,8 @@ Repository for group 11 to host our assignments for CSci 5801 Fall 2025.
 - Assignment_4/RLS/3_alternate_solutions.md - Alternative Solutions for RLS
 - Assignment_4/RLS/4_architectural_pattern.md - Architectural Pattern for RLS
 - Assignment_4/RLS/5_design_record.md - Design Record (ADR) for RLS
+
+## For Assignment 5:
+
+See the README inside the Assignment_5 directory for build and execution instructions for the
+system and tests. 
