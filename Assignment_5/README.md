@@ -1,6 +1,11 @@
 # User Manual
 Change the current directory in your terminal to the one containing the project file.
 
+## Required Dependencies
+- Python 3.10 or higher
+- If you want to run the tests: Python libraries `pytest` and `pytestcov`. 
+    - To install: `pip install pytest pytest-cov` 
+
 ## System Execution
 
 - Enter the command awith argument `python rls_source.py` (possibly `python3 rls_source.py`) 
